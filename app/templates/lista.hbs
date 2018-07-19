@@ -1,0 +1,9 @@
+{{input value=pessoa.nome}}
+
+
+{{#mostra-pessoa pessoa=pessoa}}
+	<div>Esse contéudo <strong>renderizará</strong> dentro do componente onde está a
+	marcação {{{yield}}}</div>
+{{/mostra-pessoa}}
+
+{{outlet}}
