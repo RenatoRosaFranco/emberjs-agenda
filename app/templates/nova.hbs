@@ -1,0 +1,7 @@
+<label for="nome">Nome</label>
+{{input id="nome" value=model.nome enter="salvarAoPressionarEnter"}}
+<button id='salvar' {{action 'salvar' model allowedKeys='alt'}}>Salvar</button>
+<br>
+
+{{#link-to 'lista'}}Voltar{{/link-to}}
+{{outlet}}
