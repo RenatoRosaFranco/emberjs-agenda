@@ -1,9 +1,22 @@
-{{input value=pessoa.nome}}
+<label for="filtro-nome">Filtrar por nome</label>
+{{input id='filtro-nome' value=nome}}
+<br/>
 
-
-{{#mostra-pessoa pessoa=pessoa}}
-	<div>Esse contéudo <strong>renderizará</strong> dentro do componente onde está a
-	marcação {{{yield}}}</div>
-{{/mostra-pessoa}}
+<table>
+	<thead>
+	 	<tr>
+	 		<th>ID</th>
+	 		<th>Nome</th>
+	 	</tr>
+	</thead>
+	<tbody>
+	  {{#each model as |pessoa|}}
+	  	<tr>
+	  		<td>{{ pessoa.id }}</td>
+	  		<td>{{#link-to 'pessoa' pessoa.id }}{{pessoa.nome}}{{/link-to}}</td>
+	  	</tr>
+	  {{/each}}
+	</tbody>
+</table>
 
 {{outlet}}
