@@ -3,16 +3,18 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 	
 	model(){
-		return Ember.Object.create({nome: null})
+		return this.get('store').createRecord('pessoa'); 
 	},
 
 	actions: {
 		salvar(pessoa) {
 			console.log(pessoa);
-			this.transitionTo('lista');
+			pessoa.save().then(() => {
+			  this.transitionTo('lista');
+		  })
 		},
 		salvarAoPressionarEnter(){
-			this.send('salvar', this.get('model'));
+		 this.send('salvar', this.get('model'));
 		}
 	}
 });

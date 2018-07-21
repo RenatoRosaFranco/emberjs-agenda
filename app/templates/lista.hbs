@@ -1,12 +1,16 @@
-<button {{action 'nova'}}>Nova</button>
+<button class='btn btn-primary'{{action 'nova'}}>Adicionar Pessoa</button>
 <br/>
 
 
 <label for="filtro-nome">Filtrar por nome</label>
-{{input id='filtro-nome' value=nome}}
+	<div class='input-group'>
+		<div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+{{input id='filtro-nome' value=nome class='form-control'
+placeholder="Digite o nome"}}
+	</div>
 <br/>
 
-<table>
+<table class='table'>
 	<thead>
 	 	<tr>
 	 		<th>ID</th>
